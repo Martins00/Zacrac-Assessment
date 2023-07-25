@@ -18,7 +18,9 @@
 body {
 	background-color: var(--pagebg) !important;
 }
-
+body * {
+	color: #FFF;
+}
 .print-view {
 	display: none;
 }
