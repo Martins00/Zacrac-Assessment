@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		@apply text-black;
+	}
+
+	h1 {
+		@apply text-5xl;
+	}
+	h2 {
+		@apply text-4xl;
+	}
+	h3 {
+		@apply text-3xl;
+	}
+	h4 {
+		@apply text-2xl;
+	}
+	h5 {
+		@apply text-xl;
+	}
+
+	button {
+		@apply rounded-md py-2 px-4 font-medium text-xs flex items-center;
+
+		&[variant="primary"] {
+			@apply bg-green text-white;
+		}
+
+		&[variant="primary"] {
+			@apply bg-green text-white;
+		}
+
+		&[disabled] {
+			--tw-bg-opacity: .2;
+		}
+	}
+
+	input {
+		@apply bg-pagebg rounded-md py-2 px-4 text-sm;
+		/*border-color: transparent;*/
+
+		&:focus {
+			/*outline-color: v;*/
+			/*@apply outline-green;*/
+		}
+
+		/*&[type="password"]*/
+	}
+
+  table {
+    @apply w-full;
+
+    & thead {
+      @apply bg-gray-line1;
+
+      & th {
+        @apply uppercase font-medium text-xs text-left;
+      }
+    }
+
+    & :is(th, td) {
+      @apply py-2 px-6;
+    }
+
+    & tbody tr:not(:last-child) {
+      @apply border-b border-gray-line1;
+    }
+  }
+}
+
+@layer components {
+	.summary-card,
+	.analytics-card {
+		@apply rounded-lg p-5 bg-white;
+
+		&.marked {
+			@apply border-l-8;
+		}
+
+		&[variant="gray"] {
+			@apply bg-gray-line1 border-gray-2;
+		}
+
+		&[variant="purple"] {
+			@apply bg-purple-2 border-purple;
+		}
+
+		&[variant="blue"] {
+			@apply bg-blue-2 border-blue;
+		}
+
+    &[variant="red"] {
+      @apply bg-error-2/50 border-red;
+    }
+	}
+
+	.analytics-card {
+		background-color: white !important;
+
+		&.marked {
+			@apply border-t-4;
+			border-left: none;
+		}
+	}
+
+  .icon-frame {
+    @apply aspect-square flex items-center justify-center rounded-full p-4 w-fit;
+  }
+
+  .dropdown-menu {
+    @apply absolute max-h-40 top-full left-0 mt-1 w-full border shadow-base rounded-md bg-white z-10 overflow-y-auto;
+
+    & > * {
+      @apply py-3 px-4 truncate hover:bg-green-3 select-none cursor-pointer;
+    }
+  }
+
+  .paginator {
+    &,
+    & .page-numbers {
+      @apply flex items-center gap-2;
+    }
+
+    & > button,
+    & .page-numbers > * {
+      @apply bg-white text-gray-2 p-1 rounded-md flex justify-center items-center font-medium;
+      width: 24px;
+      height: 24px;
+
+      &[data-active="true"] {
+        @apply bg-green text-white;
+      }
+    }
+  }
+
+  .otp-input {
+    @apply flex justify-center gap-x-5;
+
+    & input {
+      @apply flex items-center justify-center border-2 border-transparent font-medium p-0;
+      --size: max(40px, calc(1em + 1em * 2));
+      width: var(--size);
+      height: var(--size);
+      text-align: center;
+
+      &:focus {
+        @apply border-black
+      }
+    }
+	}
+}
+
+@layer utilities {
+	.border-transparent {
+		border-color: transparent;
+	}
+	.bg-transparent {
+		background-color: transparent;
+	}
+}

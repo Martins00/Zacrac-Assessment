@@ -1,0 +1,24 @@
+@mixin pseudo-focus($position:before) {
+    position: relative;
+    outline: none;
+  
+    &:#{$position} {
+      --border-radius: 12px;
+      --border-color: var(--clr-primary);
+      --border-width: 2px;
+      --offset: 3px;
+      --one-side: calc(var(--border-width) + var(--offset));
+      --additional-size: calc(var(--one-side) * 2);
+      --border: var(--border-width) solid var(--border-color);
+      content: '';
+      position: absolute;
+      border: var(--border);
+      border-radius: var(--border-radius);
+      width: calc(100% + var(--additional-size));
+      height: calc(100% + var(--additional-size));
+      left: calc(-1 * var(--one-side));
+      top: calc(-1 * var(--one-side));
+      pointer-events: none;
+      @content;
+    }
+  }
