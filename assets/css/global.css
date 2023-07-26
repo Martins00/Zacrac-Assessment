@@ -1,54 +1,28 @@
 :root {
-	--white: #FFFFFF;
-	--black: #071A2B;
-	--green: #028043;
-	--green-2: #54DF62;
-	--green-3: #BDFABE;
-	--purple: #907AFF;
-	--purple-2: #E8D7F9;
-	--blue: #008CFF;
-	--blue-2: #BDEBFA;
-	--red: #FF5252;
-	--orange: #FBB605;
-	--gray: #334553;
-	--gray-2: #8F9FAB;
-	--pagebg: #F4F5F7;
+	font-size: 1rem;
+}
+
+@media screen and (max-width: 640px) {
+	:root {
+		font-size: 0.875rem;
+	}		
 }
 
 body {
-	background-color: var(--pagebg) !important;
-}
-body * {
-	color: #FFF;
-}
-.print-view {
-	display: none;
+	background-color: #FFF;
+	font-family: 'Inter';
 }
 
-@media print {
-	body {
-		background-color: #ffffff !important;
-	}
-
-	@page {
-		size: auto;
-	}
-
-	.no-print {
-		display: none !important;
-	}
-
-	.print-view {
-		display: block;
-	}
-
-	.license-card {
-		border-radius: 0;
-		margin-inline: auto;
+.my-container {
+	width: 100%;
+	padding-inline: 1rem;
+}
+@media screen and (min-width: 768px) {
+	.my-container {
+		max-width: 90%;
+		margin: auto auto;
 	}
 }
 
-/*a:hover {
-	color: var(--green);
-}
-*/
+
+
