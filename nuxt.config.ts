@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     head: {
-      title: 'Zacrac Assessment'
+      title: 'Logoipsum'
     },
   },
 
