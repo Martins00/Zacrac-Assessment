@@ -1,14 +1,12 @@
 <template>
-    <div class="home flex">
-        <div class="main-container">hi</div>
-        <div class="side-container">hey</div>
-    </div>
+  <div class="pt-16 lg:pt-24">
+    <HomeHero />
+    <HomeObjectives />
+    <section class="my-16 sm:my-32">
+      <HomeUniqueFeatures />
+    </section>
+    <section class="mt-36 mb-14 sm:my-32">
+      <HomeJoinUs />
+    </section>
+  </div>
 </template>
-
-<script setup></script>
-
-<style lang="scss" scoped>
-.home {
-    height: 100vh;
-}
-</style>
