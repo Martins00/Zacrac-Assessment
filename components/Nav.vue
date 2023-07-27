@@ -7,10 +7,7 @@
           class="nav-list bg-[#FFF] z-20 lg:z-0 flex flex-col items-center lg:flex-row fixed top-0 inset-x-0 py-8 lg:py-0 lg:w-auto lg:h-auto lg:static"
           :class="{ 'hidden lg:inline-block': state.isHidden }"
         >
-          <Nuxt-link to="/">Home</Nuxt-link>
-          <Nuxt-link to="/">Our Services</Nuxt-link>
-          <Nuxt-link to="/">Pricing</Nuxt-link>
-          <Nuxt-link to="/">Company</Nuxt-link>
+          <Nuxt-link v-for="item in navItems" :to="item.path">{{ item.name }}</Nuxt-link>
         </nav>
         <SvgHamburger class="lg:hidden z-30" @click="toggleNav" />
       </div>
@@ -21,13 +18,32 @@
 <script setup>
 // component's data/state are being saved here.
 const state = reactive({
-  isHidden: true
-})
+  isHidden: true,
+});
 
 // function for toggling nav state.
 function toggleNav() {
-  state.isHidden = !state.isHidden
+  state.isHidden = !state.isHidden;
 }
+
+const navItems = reactive([
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Our Services",
+    path: "/",
+  },
+  {
+    name: "Pricing",
+    path: "/",
+  },
+  {
+    name: "Company",
+    path: "/",
+  },
+]);
 </script>
 
 <style lang="scss" scoped>
