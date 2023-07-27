@@ -7,19 +7,19 @@
         <div class="flex w-full sm:w-auto justify-between sm:space-x-20">
           <div class="links">
             <span class="font-semibold">Support</span>
-            <Nuxt-link to="/">Blog</Nuxt-link>
-            <Nuxt-link to="/">Company</Nuxt-link>
+            <Nuxt-link v-for="item in support" :to="item.link">{{
+              item.title
+            }}</Nuxt-link>
           </div>
           <div class="links">
             <span class="font-semibold">Legal</span>
-            <Nuxt-link to="/">Term of use</Nuxt-link>
-            <Nuxt-link to="/">Privacy policy</Nuxt-link>
+            <Nuxt-link v-for="item in legal" :to="item.link">{{ item.title }}</Nuxt-link>
           </div>
           <div class="links">
             <span class="font-semibold">Follow</span>
-            <Nuxt-link to="/">Twitter</Nuxt-link>
-            <Nuxt-link to="/">Linkedin</Nuxt-link>
-            <Nuxt-link to="/">Facebook</Nuxt-link>
+            <Nuxt-link v-for="item in socials" :to="item.link">{{
+              item.title
+            }}</Nuxt-link>
           </div>
         </div>
       </div>
@@ -27,11 +27,48 @@
   </div>
 </template>
 
+<script setup>
+const support = reactive([
+  {
+    title: "Blog",
+    link: "/",
+  },
+  {
+    title: "Company",
+    link: "/",
+  },
+]);
+const legal = reactive([
+  {
+    title: "Terms of use",
+    link: "/",
+  },
+  {
+    title: "Privacy policy",
+    link: "/",
+  },
+]);
+const socials = reactive([
+  {
+    title: "Twitter",
+    link: "/",
+  },
+  {
+    title: "Linkedin",
+    link: "/",
+  },
+  {
+    title: "Facebook",
+    link: "/",
+  },
+]);
+</script>
+
 <style lang="scss" scoped>
 .links > * {
   color: #ffffff;
   margin: 0.3rem 0;
-  font-size: 0.8750rem;
+  font-size: 0.875rem;
   display: block;
 }
 </style>
